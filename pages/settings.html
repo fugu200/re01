@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设置中心 - AI学习伙伴</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <style>
+    body {
+      padding: var(--spacing-2xl);
+      overflow-y: auto;
+      background: var(--bg-secondary);
+    }
+
+    .settings-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section {
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      color: var(--text-primary);
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-icon {
+      width: 28px;
+      height: 28px;
+      color: var(--primary);
+    }
+
+    .setting-item {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-2xl);
+      margin-bottom: var(--spacing-lg);
+      transition: var(--transition-fast);
+    }
+
+    .setting-item:hover {
+      box-shadow: var(--shadow);
+    }
+
+    .setting-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .setting-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .setting-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.6;
+    }
+
+    .theme-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-lg);
+    }
+
+    .theme-option {
+      padding: var(--spacing-lg);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      background: var(--bg-secondary);
+    }
+
+    .theme-option:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .theme-option.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .theme-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 12px;
+      color: var(--text-secondary);
+    }
+
+    .theme-option.active .theme-icon {
+      color: var(--primary);
+    }
+
+    .theme-option-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .form-group {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: var(--spacing-sm);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .form-hint {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="settings-container">
+    <!-- 账号管理 -->
+    <section class="section">
+      <h2 class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        账号管理
+      </h2>
+
+      <div class="setting-item">
+        <div class="setting-header">
+          <div class="setting-title">注册 / 登录</div>
+        </div>
+        <div class="setting-desc">管理你的账号信息</div>
+        <button class="btn btn-primary">登录</button>
+        <button class="btn btn-secondary" style="margin-left: 8px;">注册</button>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-header">
+          <div class="setting-title">信息修改</div>
+        </div>
+        <div class="setting-desc">修改个人信息</div>
+        <div class="form-group">
+          <label class="form-label">用户名</label>
+          <input type="text" class="input" placeholder="请输入用户名">
+          <div class="form-hint">用户名将显示在个人资料中</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">邮箱</label>
+          <input type="email" class="input" placeholder="请输入邮箱">
+          <div class="form-hint">用于接收系统通知和找回密码</div>
+        </div>
+        <button class="btn btn-primary">保存修改</button>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-header">
+          <div class="setting-title">密码重置</div>
+        </div>
+        <div class="setting-desc">修改登录密码</div>
+        <div class="form-group">
+          <label class="form-label">当前密码</label>
+          <input type="password" class="input" placeholder="请输入当前密码">
+        </div>
+        <div class="form-group">
+          <label class="form-label">新密码</label>
+          <input type="password" class="input" placeholder="请输入新密码">
+        </div>
+        <button class="btn btn-primary">修改密码</button>
+      </div>
+    </section>
+
+    <!-- 主题设置 -->
+    <section class="section">
+      <h2 class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        主题设置
+      </h2>
+
+      <div class="setting-item">
+        <div class="setting-header">
+          <div class="setting-title">外观主题</div>
+        </div>
+        <div class="setting-desc">选择你喜欢的主题风格</div>
+        <div class="theme-options">
+          <div class="theme-option active" data-theme="light">
+            <svg class="theme-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="16" cy="16" r="6"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="16" y1="26" x2="16" y2="30"/>
+              <line x1="5.6" y1="5.6" x2="8.5" y2="8.5"/>
+              <line x1="23.5" y1="23.5" x2="26.4" y2="26.4"/>
+              <line x1="2" y1="16" x2="6" y2="16"/>
+              <line x1="26" y1="16" x2="30" y2="16"/>
+              <line x1="5.6" y1="26.4" x2="8.5" y2="23.5"/>
+              <line x1="23.5" y1="8.5" x2="26.4" y2="5.6"/>
+            </svg>
+            <div class="theme-option-label">浅色模式</div>
+          </div>
+          <div class="theme-option" data-theme="dark">
+            <svg class="theme-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 2C10 2 5 7 5 13C5 19 10 24 16 24C22 24 27 19 27 13C27 12 26.9 11 26.7 10C25 11 23 12 21 12C17 12 14 9 14 5C14 4 14.3 3 14.7 2.3C15.1 2.1 15.5 2 16 2Z"/>
+            </svg>
+            <div class="theme-option-label">深色模式</div>
+          </div>
+          <div class="theme-option" data-theme="auto">
+            <svg class="theme-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="16" cy="16" r="12"/>
+              <path d="M16 4 A 12 12 0 0 1 16 28 Z" fill="currentColor" opacity="0.3"/>
+            </svg>
+            <div class="theme-option-label">跟随系统</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联调设置 -->
+    <section class="section">
+      <h2 class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        联调设置
+      </h2>
+
+      <div class="setting-item">
+        <div class="setting-header">
+          <div class="setting-title">后端地址配置</div>
+        </div>
+        <div class="setting-desc">配置后端 API 地址</div>
+        <div class="form-group">
+          <label class="form-label">API Base URL</label>
+          <input type="text" class="input" id="api-url" placeholder="http://127.0.0.1:5000">
+          <div class="form-hint">后端服务器地址，修改后将应用到所有 API 请求</div>
+        </div>
+        <button class="btn btn-primary" id="save-api-url">保存配置</button>
+      </div>
+    </section>
+  </div>
+
+  <script type="module">
+    import { getApiBaseUrl, setApiBaseUrl } from '../assets/js/config.js';
+
+    // 同步主题
+    const parentTheme = window.parent.document.documentElement.getAttribute('data-theme');
+    if (parentTheme) {
+      document.documentElement.setAttribute('data-theme', parentTheme);
+    }
+
+    // 主题切换
+    const themeOptions = document.querySelectorAll('.theme-option');
+    themeOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        const theme = option.dataset.theme;
+        
+        themeOptions.forEach(opt => opt.classList.remove('active'));
+        option.classList.add('active');
+
+        if (theme === 'auto') {
+          // 跟随系统
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const actualTheme = prefersDark ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', actualTheme);
+          window.parent.document.documentElement.setAttribute('data-theme', actualTheme);
+        } else {
+          document.documentElement.setAttribute('data-theme', theme);
+          window.parent.document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+        }
+      });
+    });
+
+    // API 地址配置
+    const apiUrlInput = document.getElementById('api-url');
+    const saveApiUrlBtn = document.getElementById('save-api-url');
+
+    // 加载当前配置
+    apiUrlInput.value = getApiBaseUrl();
+
+    // 保存配置
+    saveApiUrlBtn.addEventListener('click', () => {
+      const url = apiUrlInput.value.trim();
+      if (url) {
+        setApiBaseUrl(url);
+        alert('API 地址已保存');
+      }
+    });
+  </script>
+</body>
+</html>

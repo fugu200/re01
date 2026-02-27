@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据中心 - AI学习伙伴</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <style>
+    body {
+      padding: var(--spacing-lg);
+      overflow-y: auto;
+    }
+
+    .data-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section {
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      color: var(--text-primary);
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .data-input-area {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .form-group {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: var(--spacing-sm);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .chart-area {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .placeholder {
+      text-align: center;
+      color: var(--text-secondary);
+    }
+
+    .placeholder-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: var(--spacing-md);
+      color: var(--text-tertiary);
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="data-container">
+    <!-- 数据录入 -->
+    <section class="section">
+      <h2 class="section-title">数据录入</h2>
+      <div class="data-input-area">
+        <div class="form-group">
+          <label class="form-label">科目成绩</label>
+          <input type="text" class="input" placeholder="例如：数学 95分">
+        </div>
+        <div class="form-group">
+          <label class="form-label">专注时长（分钟）</label>
+          <input type="number" class="input" placeholder="例如：120">
+        </div>
+        <button class="btn btn-primary">提交数据</button>
+      </div>
+    </section>
+
+    <!-- AI 分析 -->
+    <section class="section">
+      <h2 class="section-title">AI 分析</h2>
+      <div class="card">
+        <div class="placeholder">
+          <svg class="placeholder-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="32" cy="32" r="24"/>
+            <circle cx="32" cy="32" r="16"/>
+            <line x1="32" y1="8" x2="32" y2="16"/>
+            <line x1="32" y1="48" x2="32" y2="56"/>
+            <line x1="8" y1="32" x2="16" y2="32"/>
+            <line x1="48" y1="32" x2="56" y2="32"/>
+          </svg>
+          <p>AI 分析结果将在这里显示</p>
+          <p style="font-size: 12px; margin-top: 8px; color: var(--text-tertiary);">提交数据后，AI 会自动分析并给出建议</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 数据可视化 -->
+    <section class="section">
+      <h2 class="section-title">数据可视化</h2>
+      <div class="chart-area">
+        <div class="placeholder">
+          <svg class="placeholder-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="56" x2="56" y2="56"/>
+            <line x1="8" y1="8" x2="8" y2="56"/>
+            <polyline points="16,48 24,32 32,40 40,20 48,28"/>
+            <circle cx="16" cy="48" r="2" fill="currentColor"/>
+            <circle cx="24" cy="32" r="2" fill="currentColor"/>
+            <circle cx="32" cy="40" r="2" fill="currentColor"/>
+            <circle cx="40" cy="20" r="2" fill="currentColor"/>
+            <circle cx="48" cy="28" r="2" fill="currentColor"/>
+          </svg>
+          <p>图表将在这里显示</p>
+          <p style="font-size: 12px; margin-top: 8px; color: var(--text-tertiary);">可以使用 Chart.js 或 ECharts 实现</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 学习数据展示 -->
+    <section class="section">
+      <h2 class="section-title">学习数据展示</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-title">科目成绩变化</div>
+          <div class="placeholder">
+            <p style="font-size: 12px;">折线图展示成绩趋势</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">专注模式使用时间</div>
+          <div class="placeholder">
+            <p style="font-size: 12px;">柱状图展示专注时长</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">个人思考和总结</div>
+          <div class="placeholder">
+            <p style="font-size: 12px;">文本展示个人总结</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 未来目标 -->
+    <section class="section">
+      <h2 class="section-title">未来目标</h2>
+      <div class="card">
+        <div class="placeholder">
+          <svg class="placeholder-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="32" cy="32" r="24"/>
+            <circle cx="32" cy="32" r="16"/>
+            <circle cx="32" cy="32" r="8"/>
+            <line x1="32" y1="32" x2="48" y2="20"/>
+          </svg>
+          <p>设置和追踪你的学习目标</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // 同步主题
+    const parentTheme = window.parent.document.documentElement.getAttribute('data-theme');
+    if (parentTheme) {
+      document.documentElement.setAttribute('data-theme', parentTheme);
+    }
+  </script>
+</body>
+</html>
