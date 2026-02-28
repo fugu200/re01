@@ -1,0 +1,159 @@
+/* assets/css/growth.css */
+
+/* 成长记录表单 */
+.growth-form {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.growth-form input,
+.growth-form textarea {
+  width: 100%;
+  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: var(--font-md);
+}
+
+.growth-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.growth-form button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  margin-top: var(--spacing-sm);
+}
+
+/* 成长记录列表 */
+.growth-list {
+  margin-bottom: var(--spacing-md);
+}
+
+.growth-item {
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.growth-item:last-child {
+  margin-bottom: 0;
+}
+
+.growth-item .date {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-sm);
+}
+
+.growth-item .content {
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.growth-item .reflection {
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.growth-item .growth-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.growth-item .growth-actions button {
+  padding: 0 var(--spacing-sm);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.growth-item .growth-actions button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* 目标管理 */
+.goal-list {
+  margin-bottom: var(--spacing-md);
+}
+
+.goal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+}
+
+.goal-item .goal-content {
+  flex: 1;
+  margin-right: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.goal-item .goal-actions button {
+  padding: 0 var(--spacing-sm);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.goal-item .goal-actions button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* 添加目标按钮 */
+#add-goal {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: var(--spacing-md);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .growth-form input,
+  .growth-form textarea {
+    width: 100%;
+  }
+  
+  .growth-item .growth-actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}

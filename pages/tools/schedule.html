@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课表管理</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/schedule.css">
+</head>
+<body>
+  <!-- 页面头部 -->
+  <header class="schedule-header-wrap">
+    <button class="back-btn" onclick="parent.navigateToPage('tools')">← 返回工具页</button>
+    <h2>我的课表</h2>
+    <div class="header-btns">
+      <!-- 【必填元素】导入课表按钮 -->
+      <button id="importScheduleBtn" class="btn-secondary">导入课表</button>
+      <!-- 【必填元素】添加课程按钮 -->
+      <button id="addCourseBtn" class="btn-primary">添加课程</button>
+    </div>
+  </header>
+
+  <!-- 【必填元素】周课表网格（7列×时间段行） -->
+  <main class="schedule-main">
+    <div class="schedule-grid">
+      <!-- 表头：周一到周日7列 -->
+      <div class="schedule-header">周一</div>
+      <div class="schedule-header">周二</div>
+      <div class="schedule-header">周三</div>
+      <div class="schedule-header">周四</div>
+      <div class="schedule-header">周五</div>
+      <div class="schedule-header">周六</div>
+      <div class="schedule-header">周日</div>
+
+      <!-- 课表单元格：12节课 -->
+      <!-- 第1节 -->
+      <div class="schedule-cell" data-week="1" data-section="1"></div>
+      <div class="schedule-cell" data-week="2" data-section="1"></div>
+      <div class="schedule-cell" data-week="3" data-section="1"></div>
+      <div class="schedule-cell" data-week="4" data-section="1"></div>
+      <div class="schedule-cell" data-week="5" data-section="1"></div>
+      <div class="schedule-cell" data-week="6" data-section="1"></div>
+      <div class="schedule-cell" data-week="7" data-section="1"></div>
+
+      <!-- 第2节 -->
+      <div class="schedule-cell" data-week="1" data-section="2"></div>
+      <div class="schedule-cell" data-week="2" data-section="2"></div>
+      <div class="schedule-cell" data-week="3" data-section="2"></div>
+      <div class="schedule-cell" data-week="4" data-section="2"></div>
+      <div class="schedule-cell" data-week="5" data-section="2"></div>
+      <div class="schedule-cell" data-week="6" data-section="2"></div>
+      <div class="schedule-cell" data-week="7" data-section="2"></div>
+
+      <!-- 第3节 -->
+      <div class="schedule-cell" data-week="1" data-section="3"></div>
+      <div class="schedule-cell" data-week="2" data-section="3"></div>
+      <div class="schedule-cell" data-week="3" data-section="3"></div>
+      <div class="schedule-cell" data-week="4" data-section="3"></div>
+      <div class="schedule-cell" data-week="5" data-section="3"></div>
+      <div class="schedule-cell" data-week="6" data-section="3"></div>
+      <div class="schedule-cell" data-week="7" data-section="3"></div>
+
+      <!-- 第4节 -->
+      <div class="schedule-cell" data-week="1" data-section="4"></div>
+      <div class="schedule-cell" data-week="2" data-section="4"></div>
+      <div class="schedule-cell" data-week="3" data-section="4"></div>
+      <div class="schedule-cell" data-week="4" data-section="4"></div>
+      <div class="schedule-cell" data-week="5" data-section="4"></div>
+      <div class="schedule-cell" data-week="6" data-section="4"></div>
+      <div class="schedule-cell" data-week="7" data-section="4"></div>
+
+      <!-- 第5节 -->
+      <div class="schedule-cell" data-week="1" data-section="5"></div>
+      <div class="schedule-cell" data-week="2" data-section="5"></div>
+      <div class="schedule-cell" data-week="3" data-section="5"></div>
+      <div class="schedule-cell" data-week="4" data-section="5"></div>
+      <div class="schedule-cell" data-week="5" data-section="5"></div>
+      <div class="schedule-cell" data-week="6" data-section="5"></div>
+      <div class="schedule-cell" data-week="7" data-section="5"></div>
+
+      <!-- 第6节 -->
+      <div class="schedule-cell" data-week="1" data-section="6"></div>
+      <div class="schedule-cell" data-week="2" data-section="6"></div>
+      <div class="schedule-cell" data-week="3" data-section="6"></div>
+      <div class="schedule-cell" data-week="4" data-section="6"></div>
+      <div class="schedule-cell" data-week="5" data-section="6"></div>
+      <div class="schedule-cell" data-week="6" data-section="6"></div>
+      <div class="schedule-cell" data-week="7" data-section="6"></div>
+
+      <!-- 第7节 -->
+      <div class="schedule-cell" data-week="1" data-section="7"></div>
+      <div class="schedule-cell" data-week="2" data-section="7"></div>
+      <div class="schedule-cell" data-week="3" data-section="7"></div>
+      <div class="schedule-cell" data-week="4" data-section="7"></div>
+      <div class="schedule-cell" data-week="5" data-section="7"></div>
+      <div class="schedule-cell" data-week="6" data-section="7"></div>
+      <div class="schedule-cell" data-week="7" data-section="7"></div>
+
+      <!-- 第8节 -->
+      <div class="schedule-cell" data-week="1" data-section="8"></div>
+      <div class="schedule-cell" data-week="2" data-section="8"></div>
+      <div class="schedule-cell" data-week="3" data-section="8"></div>
+      <div class="schedule-cell" data-week="4" data-section="8"></div>
+      <div class="schedule-cell" data-week="5" data-section="8"></div>
+      <div class="schedule-cell" data-week="6" data-section="8"></div>
+      <div class="schedule-cell" data-week="7" data-section="8"></div>
+
+      <!-- 第9节 -->
+      <div class="schedule-cell" data-week="1" data-section="9"></div>
+      <div class="schedule-cell" data-week="2" data-section="9"></div>
+      <div class="schedule-cell" data-week="3" data-section="9"></div>
+      <div class="schedule-cell" data-week="4" data-section="9"></div>
+      <div class="schedule-cell" data-week="5" data-section="9"></div>
+      <div class="schedule-cell" data-week="6" data-section="9"></div>
+      <div class="schedule-cell" data-week="7" data-section="9"></div>
+
+      <!-- 第10节 -->
+      <div class="schedule-cell" data-week="1" data-section="10"></div>
+      <div class="schedule-cell" data-week="2" data-section="10"></div>
+      <div class="schedule-cell" data-week="3" data-section="10"></div>
+      <div class="schedule-cell" data-week="4" data-section="10"></div>
+      <div class="schedule-cell" data-week="5" data-section="10"></div>
+      <div class="schedule-cell" data-week="6" data-section="10"></div>
+      <div class="schedule-cell" data-week="7" data-section="10"></div>
+
+      <!-- 第11节 -->
+      <div class="schedule-cell" data-week="1" data-section="11"></div>
+      <div class="schedule-cell" data-week="2" data-section="11"></div>
+      <div class="schedule-cell" data-week="3" data-section="11"></div>
+      <div class="schedule-cell" data-week="4" data-section="11"></div>
+      <div class="schedule-cell" data-week="5" data-section="11"></div>
+      <div class="schedule-cell" data-week="6" data-section="11"></div>
+      <div class="schedule-cell" data-week="7" data-section="11"></div>
+
+      <!-- 第12节 -->
+      <div class="schedule-cell" data-week="1" data-section="12"></div>
+      <div class="schedule-cell" data-week="2" data-section="12"></div>
+      <div class="schedule-cell" data-week="3" data-section="12"></div>
+      <div class="schedule-cell" data-week="4" data-section="12"></div>
+      <div class="schedule-cell" data-week="5" data-section="12"></div>
+      <div class="schedule-cell" data-week="6" data-section="12"></div>
+      <div class="schedule-cell" data-week="7" data-section="12"></div>
+    </div>
+  </main>
+
+  <!-- 【必填元素】课程详情弹窗（添加/编辑课程用） -->
+  <div id="courseFormModal" class="modal-wrap">
+    <div class="modal-content small-modal">
+      <div class="modal-header">
+        <h3 id="formTitle">添加课程</h3>
+        <button id="closeFormBtn" class="btn-close">×</button>
+      </div>
+      <!-- 【必填类名】schedule-form 课程表单 -->
+      <form id="courseForm" class="schedule-form">
+        <div class="form-item">
+          <label>课程名称 <span style="color:red">*</span></label>
+          <input type="text" name="courseName" placeholder="请输入课程名称" required>
+        </div>
+        <div class="form-row">
+          <div class="form-item">
+            <label>星期 <span style="color:red">*</span></label>
+            <select name="week" required>
+              <option value="1">周一</option>
+              <option value="2">周二</option>
+              <option value="3">周三</option>
+              <option value="4">周四</option>
+              <option value="5">周五</option>
+              <option value="6">周六</option>
+              <option value="7">周日</option>
+            </select>
+          </div>
+          <div class="form-item">
+            <label>开始节数 <span style="color:red">*</span></label>
+            <input type="number" name="startSection" min="1" max="12" placeholder="1" required>
+          </div>
+          <div class="form-item">
+            <label>结束节数 <span style="color:red">*</span></label>
+            <input type="number" name="endSection" min="1" max="12" placeholder="2" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-item">
+            <label>上课地点</label>
+            <input type="text" name="location" placeholder="如：教一101">
+          </div>
+          <div class="form-item">
+            <label>授课老师</label>
+            <input type="text" name="teacher" placeholder="如：张老师">
+          </div>
+        </div>
+        <div class="form-btns">
+          <button type="button" id="deleteCourseBtn" class="btn-danger" style="display:none;">删除课程</button>
+          <button type="button" id="cancelFormBtn" class="btn-secondary">取消</button>
+          <button type="submit" class="btn-primary">保存</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 导入课表弹窗 -->
+  <div id="importScheduleModal" class="modal-wrap">
+    <div class="modal-content small-modal">
+      <div class="modal-header">
+        <h3>导入课表</h3>
+        <button id="closeImportBtn" class="btn-close">×</button>
+      </div>
+      <div class="import-content">
+        <div class="import-item">
+          <p>Excel文件导入</p>
+          <input type="file" id="excelFileInput" accept=".xlsx,.xls">
+        </div>
+        <div class="import-item">
+          <p>图片导入（OCR识别）</p>
+          <input type="file" id="imageFileInput" accept="image/*">
+        </div>
+        <div class="form-btns">
+          <button id="cancelImportBtn" class="btn-secondary">取消</button>
+          <button id="confirmImportBtn" class="btn-primary">确认导入</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    // 同步主题
+    const parentTheme = window.parent.document.documentElement.getAttribute('data-theme');
+    if (parentTheme) {
+      document.documentElement.setAttribute('data-theme', parentTheme);
+    }
+  </script>
+  <script type="module" src="../../assets/js/schedule.js"></script>
+</body>
+</html>
