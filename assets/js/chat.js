@@ -1,3 +1,7 @@
+// 导入必要的API函数
+import { apiPost } from '../assets/js/api.js';
+import { toast } from '../assets/js/toast.js';
+
 // AI对话功能
 function sendMessage() {
   const message = document.getElementById('user-message').value;
@@ -59,4 +63,17 @@ function recommendKnowledge(knowledge) {
     knowledgeElement.textContent = k;
     knowledgeContainer.appendChild(knowledgeElement);
   });
+
 }
+// 添加事件绑定（关键！）
+document.addEventListener('DOMContentLoaded', function() {
+  // 绑定发送按钮
+  document.getElementById('send-button').addEventListener('click', sendMessage);
+  
+  // 绑定回车键发送
+  document.getElementById('user-message').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+});
