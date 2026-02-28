@@ -1,8 +1,8 @@
 // assets/js/chat.js
 
 // 1. 导入必要的模块
-import { apiPost } from '../assets/js/api.js';
-import { toast } from '../assets/js/toast.js';
+import { apiPost } from './api.js';
+import { toast } from './toast.js';
 
 console.log('[CHAT] Initializing chat module...');
 
@@ -121,3 +121,4 @@ function submitQuestion() {
       toast.error('辅导请求失败: ' + error.message);
     });
 }
+
